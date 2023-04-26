@@ -1,5 +1,3 @@
-from rest_framework.permissions import AllowAny
-
 from taskboard.models import Task
 from . import serializer
 
@@ -9,7 +7,6 @@ from rest_framework.generics import ListAPIView, ListCreateAPIView, RetrieveUpda
 class TaskAPI(ListCreateAPIView):
     queryset = Task.objects.all()
     serializer_class = serializer.TaskSerializer
-    permission_classes = (AllowAny,)
 
 
 class TaskRetrieveUpdateDestroyAPI(RetrieveUpdateDestroyAPIView):

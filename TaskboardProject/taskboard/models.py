@@ -3,15 +3,21 @@ from django.contrib.auth.models import User
 from . import constants
 
 
-class TimestampModel(models.Model):
-    created = models.DateTimeField(auto_now_add=True)
+class UpdatedTimestampModel(models.Model):
     updated = models.DateTimeField(auto_now=True)
 
     class Meta:
         abstract = True
 
 
-class Task(TimestampModel):
+class CreatedTimestampModel(models.Model):
+    created = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        abstract = True
+
+
+class Task(CreatedTimestampModel, UpdatedTimestampModel):
     name = models.CharField(120)
     description = models.CharField(512, default="")
     user = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
@@ -22,3 +28,19 @@ class Task(TimestampModel):
 
     def __str__(self):
         return self.name
+
+
+class TaskHistory(CreatedTimestampModel):
+    task = models.ForeignKey(Task, on_delete=models.CASCADE)
+    action = models.CharField(20, choices=constants.TASK_ACTION)
+
+    name = models.CharField(120)
+    description = models.CharField(512, default="")
+    user = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
+    state = models.CharField(20, choices=constants.TASK_STATES, default=constants.TASK_STATES[0])
+
+    class Meta:
+        ordering = ['-id']
+
+    def __str__(self):
+        return self.name + " (" + str(self.created) + ")"

@@ -3,3 +3,9 @@ TASK_STATES = (
     ('in_progress', 'In Progress'),
     ('done', 'Done'),
 )
+
+TASK_ACTION = (
+    ('created', 'Created'),
+    ('updated', 'Updated'),
+    ('deleted', 'Deleted'),
+)
