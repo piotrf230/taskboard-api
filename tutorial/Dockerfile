@@ -8,7 +8,7 @@ ENV PYTHONBUFFERED 1
 
 # install dependencies
 RUN apk update \
-    && apk add postgresql-dev gcc python-dev musl-dev
+    && apk add postgresql-dev gcc python3-dev musl-dev
 
 COPY requirements.txt /app/requirements.txt
 RUN pip install --upgrade pip
