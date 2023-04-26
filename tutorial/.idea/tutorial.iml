@@ -6,7 +6,7 @@
         <option name="rootFolder" value="$MODULE_DIR$" />
         <option name="settingsModule" value="tutorial/settings.py" />
         <option name="manageScript" value="$MODULE_DIR$/manage.py" />
-        <option name="environment" value="&lt;map/&gt;" />
+        <option name="environment" value="&lt;map&gt;&#10;  &lt;entry&gt;&#10;    &lt;string&gt;DJANGO_SETTINGS_MODULE&lt;/string&gt;&#10;    &lt;string&gt;tutorial.settings&lt;/string&gt;&#10;  &lt;/entry&gt;&#10;  &lt;entry&gt;&#10;    &lt;string&gt;PYTHONUNBUFFERED&lt;/string&gt;&#10;    &lt;string&gt;1&lt;/string&gt;&#10;  &lt;/entry&gt;&#10;  &lt;entry&gt;&#10;    &lt;string&gt;DB_USERNAME&lt;/string&gt;&#10;    &lt;string&gt;postgres&lt;/string&gt;&#10;  &lt;/entry&gt;&#10;  &lt;entry&gt;&#10;    &lt;string&gt;DB_PORT&lt;/string&gt;&#10;    &lt;string&gt;5432&lt;/string&gt;&#10;  &lt;/entry&gt;&#10;  &lt;entry&gt;&#10;    &lt;string&gt;DB_NAME&lt;/string&gt;&#10;    &lt;string&gt;test_db&lt;/string&gt;&#10;  &lt;/entry&gt;&#10;  &lt;entry&gt;&#10;    &lt;string&gt;DB_HOST&lt;/string&gt;&#10;    &lt;string&gt;localhost&lt;/string&gt;&#10;  &lt;/entry&gt;&#10;  &lt;entry&gt;&#10;    &lt;string&gt;DEBUG&lt;/string&gt;&#10;    &lt;string&gt;1&lt;/string&gt;&#10;  &lt;/entry&gt;&#10;  &lt;entry&gt;&#10;    &lt;string&gt;DB_PASSWORD&lt;/string&gt;&#10;    &lt;string&gt;postgress12345&lt;/string&gt;&#10;  &lt;/entry&gt;&#10;&lt;/map&gt;" />
         <option name="doNotUseTestRunner" value="false" />
         <option name="trackFilePattern" value="migrations" />
       </configuration>
