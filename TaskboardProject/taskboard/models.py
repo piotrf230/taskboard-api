@@ -13,9 +13,9 @@ class TimestampModel(models.Model):
 
 class Task(TimestampModel):
     name = models.CharField(120)
-    description = models.CharField(512)
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
-    state = models.CharField(20, choices=constants.TASK_STATES)
+    description = models.CharField(512, default="")
+    user = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
+    state = models.CharField(20, choices=constants.TASK_STATES, default=constants.TASK_STATES[0])
 
     class Meta:
         ordering = ['-id']
