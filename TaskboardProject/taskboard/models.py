@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from . import constants
+from . import validators
 
 
 class UpdatedTimestampModel(models.Model):
@@ -21,7 +22,8 @@ class Task(CreatedTimestampModel, UpdatedTimestampModel):
     name = models.CharField(120)
     description = models.CharField(512, default="")
     user = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
-    state = models.CharField(20, choices=constants.TASK_STATES, default=constants.TASK_STATES[0])
+    state = models.CharField(20, choices=constants.TASK_STATES, default=constants.TASK_STATES[0],
+                             validators=[validators.task_state_validator])
 
     class Meta:
         ordering = ['-id']
