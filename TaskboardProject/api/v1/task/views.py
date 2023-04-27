@@ -1,4 +1,4 @@
-from taskboard.models import Task
+from taskboard.models import Task, TaskHistory
 from . import serializer
 
 from rest_framework.generics import ListAPIView, ListCreateAPIView, RetrieveUpdateDestroyAPIView
@@ -39,3 +39,11 @@ class TaskListByNoneUserAPI(ListAPIView):
 
     def get_queryset(self):
         return Task.objects.filter(user_id=None)
+
+
+class TaskHistoryAPI(ListAPIView):
+    serializer_class = serializer.TaskHistorySerializer
+
+    def get_queryset(self):
+        task_id = self.kwargs.get('id', None)
+        return TaskHistory.objects.filter(task_id=task_id)
