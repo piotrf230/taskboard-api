@@ -1,4 +1,4 @@
-# Backend do zarządzania zadaniami
+# Backend aplikacji do zarządzania zadaniami
 [English Version](README_en.md)
 ## Uruchomienie
 Aplikacja wymaga do uruchomienia programu Docker oraz docker-compose.  

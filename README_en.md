@@ -1,4 +1,4 @@
-# Backend do zarządzania zadaniami
+# Task management application backend
 [Polska wersja](README.md)
 ## Run
 Application requires Docker and docker-compose in order to run.
