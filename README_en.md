@@ -1,5 +1,5 @@
+***[Polska wersja](README.md)***
 # Task management application backend
-[Polska wersja](README.md)
 ## Run
 Application requires Docker and docker-compose in order to run.
 In order to run the app in docker containers (three containers are created: "db" - database, "backend" - app and "web" - nginx server), one should execute the following commands in TaskboardProject directory:  

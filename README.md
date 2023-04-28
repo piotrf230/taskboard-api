@@ -1,5 +1,5 @@
+***[English Version](README_en.md)***
 # Backend aplikacji do zarządzania zadaniami
-[English Version](README_en.md)
 ## Uruchomienie
 Aplikacja wymaga do uruchomienia programu Docker oraz docker-compose.  
 Aby uruchomić aplikację w kontenerach docker (tworzony jest kontener bazy danych "db", kontener aplikacji "backend" oraz kontener serwera nginx "web"), należy wykonać w katalogu TaskboardProject następujące polecenia:  
