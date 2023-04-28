@@ -21,8 +21,8 @@ class TaskListByKeywordAPI(ListAPIView):
 
     def get_queryset(self):
         keyword = self.kwargs.get('kw', None)
-        kw_in_name = Task.objects.filter(name__contains=keyword)
-        kw_in_desc = Task.objects.filter(description__contains=keyword)
+        kw_in_name = Task.objects.filter(name__icontains=keyword)
+        kw_in_desc = Task.objects.filter(description__icontains=keyword)
         return kw_in_desc | kw_in_name
 
 
@@ -39,6 +39,14 @@ class TaskListByNoneUserAPI(ListAPIView):
 
     def get_queryset(self):
         return Task.objects.filter(user_id=None)
+
+
+class TaskListByStateAPI(ListAPIView):
+    serializer_class = serializer.TaskSerializer
+
+    def get_queryset(self):
+        state = self.kwargs.get('st', None)
+        return Task.objects.filter(state__icontains=state)
 
 
 class TaskHistoryAPI(ListAPIView):
