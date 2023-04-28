@@ -1,11 +1,11 @@
 TASK_STATES = (
-    ('new', 'New'),
-    ('in_progress', 'In Progress'),
-    ('done', 'Done'),
+    'new',
+    'in_progress',
+    'done',
 )
 
 TASK_ACTION = (
-    ('created', 'Created'),
-    ('updated', 'Updated'),
-    ('deleted', 'Deleted'),
+    'created',
+    'updated',
+    'deleted',
 )
