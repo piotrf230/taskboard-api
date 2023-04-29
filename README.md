@@ -10,4 +10,4 @@ Aby dodać konto administratora, należy dodatkowo wykonać polecenie:
 <code>docker-compose exec web python manage.py createsuperuser</code>  
 
 
-## [Dokumentacja w języku angielskim](documentation/Main.md)
+## Spis treści:

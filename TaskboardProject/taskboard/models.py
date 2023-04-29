@@ -32,7 +32,7 @@ class Task(CreatedTimestampModel, UpdatedTimestampModel):
 
 
 class TaskHistory(CreatedTimestampModel):
-    task = models.ForeignKey(Task, on_delete=models.CASCADE)
+    task = models.ForeignKey(Task, on_delete=models.DO_NOTHING)
     action = models.CharField(20, validators=[validators.task_action_validator])
 
     name = models.CharField(120)

@@ -50,6 +50,10 @@ class TaskListByStateAPI(ListAPIView):
 
 
 class TaskHistoryAPI(ListAPIView):
+    queryset = TaskHistory.objects.all()
+    serializer_class = serializer.TaskHistorySerializer
+
+class TaskHistoryByIdAPI(ListAPIView):
     serializer_class = serializer.TaskHistorySerializer
 
     def get_queryset(self):
