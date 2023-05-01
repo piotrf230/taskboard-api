@@ -10,4 +10,7 @@ The following command can be used to add administrator user:
 <code>docker-compose exec web python manage.py createsuperuser</code>  
 
 
-## [Documentation](documentation/Main.md)
+## Table of Contents:
+### [Model](documentation/Model.md)
+### [Task HTTP API Endpoints](documentation/TaskEndpoints.md)
+### [User HTTP API Endpoints](documentation/UserEndpoints.md)
