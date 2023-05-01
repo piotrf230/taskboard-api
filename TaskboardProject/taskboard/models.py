@@ -32,7 +32,8 @@ class Task(CreatedTimestampModel, UpdatedTimestampModel):
 
 
 class TaskHistory(CreatedTimestampModel):
-    task = models.ForeignKey(Task, on_delete=models.DO_NOTHING)
+    # task could be a foreign key, but tasks can be deleted, and on_delete=DO_NOTHING could create issues
+    task_id = models.IntegerField(default=0)
     action = models.CharField(20, validators=[validators.task_action_validator])
 
     name = models.CharField(120)
