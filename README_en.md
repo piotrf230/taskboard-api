@@ -14,3 +14,4 @@ The following command can be used to add administrator user:
 ### [Model](documentation/Model.md)
 ### [Task HTTP API Endpoints](documentation/TaskEndpoints.md)
 ### [User HTTP API Endpoints](documentation/UserEndpoints.md)
+### [PyTest unit tests](Tests/Tests.md)

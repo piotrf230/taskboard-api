@@ -14,3 +14,4 @@ Aby dodać konto administratora, należy dodatkowo wykonać polecenie:
 ### [Model](documentation/Model.md)
 ### [Końcówki HTTP Zadania](documentation/TaskEndpoints.md)
 ### [Końcówki HTTP Użytkownika](documentation/UserEndpoints.md)
+### [Testy jednostkowe z użyciem PyTest](Tests/Tests.md)
