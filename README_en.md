@@ -2,7 +2,7 @@
 # Task management application backend
 ## Installation
 Application requires Docker and docker-compose in order to run.
-In order to run the app in docker containers (three containers are created: "db" - database, "backend" - app and "web" - nginx server), one should execute the following commands in TaskboardProject directory:  
+In order to run the app in Docker containers (three containers are created: "db" - database, "backend" - app and "web" - nginx server), one should execute the following commands in TaskboardProject directory:  
 <code>docker-compose up -d  --build</code>  
 <code>docker-compose exec web python manage.py collectstatic</code>  
 <code>docker-compose exec web python manage.py migrate</code>  
