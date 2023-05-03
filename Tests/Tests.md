@@ -8,8 +8,8 @@ because each test should finish before token timeout.
 
 ### Task parameters
 <code>task_count</code> - specifies the number of tasks that will be inserted into database during tests.
-Half of the tasks will be updated, and the other half - deleted.  
-<code>users</code> - an array of users that will be assigned randomly to roughly half inserted tasks.
+Half of the tasks will be updated, and the other half deleted.  
+<code>users</code> - an array of users that will be assigned randomly to roughly half of the inserted tasks.
 the first element would be assigned to updated tasks.
 The list is not created on test user registration, as it would render task unit tests dependable on user tests.
 
