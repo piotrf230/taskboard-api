@@ -1,17 +1,16 @@
-***[English Version](README_en.md)***
-# Backend aplikacji do zarządzania zadaniami
-## Instalacja
-Aplikacja wymaga do uruchomienia programu Docker oraz docker-compose.  
-Aby uruchomić aplikację w kontenerach Dockera (tworzony jest kontener bazy danych "db", kontener aplikacji "backend" oraz kontener serwera nginx "web"), należy wykonać w katalogu TaskboardProject następujące polecenia:  
+# Task management application backend
+## Installation
+Application requires Docker and docker-compose in order to run.
+In order to run the app in Docker containers (three containers are created: "db" - database, "backend" - app and "web" - nginx server), one should execute the following commands in TaskboardProject directory:  
 <code>docker-compose up -d  --build</code>  
 <code>docker-compose exec web python manage.py collectstatic</code>  
 <code>docker-compose exec web python manage.py migrate</code>  
-Aby dodać konto administratora, należy dodatkowo wykonać polecenie:  
+The following command can be used to add administrator user:  
 <code>docker-compose exec web python manage.py createsuperuser</code>  
 
 
-## Spis treści (dokumentacja w języku angielskim):
+## Table of Contents:
 ### [Model](documentation/Model.md)
-### [Końcówki HTTP Zadania](documentation/TaskEndpoints.md)
-### [Końcówki HTTP Użytkownika](documentation/UserEndpoints.md)
-### [Testy jednostkowe z użyciem PyTest](Tests/Tests.md)
+### [Task HTTP API Endpoints](documentation/TaskEndpoints.md)
+### [User HTTP API Endpoints](documentation/UserEndpoints.md)
+### [PyTest unit tests](Tests/Tests.md)
