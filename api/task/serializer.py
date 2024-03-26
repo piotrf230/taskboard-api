@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from taskboard.models import Task, TaskHistory
+from taskboard_app.models import Task, TaskHistory
 
 
 class TaskSerializer(serializers.ModelSerializer):

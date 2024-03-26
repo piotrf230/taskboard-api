@@ -1,8 +1,8 @@
 from django.db.models import signals
 from django.dispatch import receiver
 from django.contrib.auth.models import User
-from taskboard.models import Task, TaskHistory
-from taskboard import constants
+from taskboard_app.models import Task, TaskHistory
+from taskboard_app import constants
 
 
 @receiver(signals.post_save, sender=Task)

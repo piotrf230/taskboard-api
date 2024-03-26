@@ -1,4 +1,4 @@
-from taskboard.models import Task, TaskHistory
+from taskboard_app.models import Task, TaskHistory
 from . import serializer
 
 from rest_framework.generics import (
