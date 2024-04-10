@@ -4,6 +4,6 @@ from taskboard_app.models import Task
 from taskboard_app.serializers import TaskSerializer
 
 
-class TaskboardViewSet(ModelViewSet):
+class TaskViewSet(ModelViewSet):
     serializer_class = TaskSerializer
     queryset = Task.objects.all()

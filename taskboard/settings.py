@@ -40,9 +40,8 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "rest_framework",
-    "drf_spectacular",
-    "rest_framework_swagger",
     "taskboard_app",
+    "drf_spectacular",
 ]
 
 MIDDLEWARE = [
