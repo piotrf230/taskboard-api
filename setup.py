@@ -9,7 +9,7 @@ def get_dependencies():
 setup(
     name="taskboard",
     version="1.0.0",
-    packages=["api", "api.user", "taskboard", "taskboard_app"],
+    packages=["taskboard", "apps.users", "apps.tasks"],
     url="",
     license="",
     author="piotrf230",
