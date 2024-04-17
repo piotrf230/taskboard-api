@@ -7,13 +7,13 @@ def get_dependencies():
 
 
 setup(
-    name="taskboard",
+    name="taskboard_app",
     version="1.0.0",
-    packages=["taskboard", "apps.users", "apps.tasks"],
+    packages=["taskboard_app", "taskboard_app.users", "taskboard_app.tasks"],
     url="",
     license="",
     author="piotrf230",
     author_email="",
-    description="taskboard project",
+    description="taskboard_app project",
     install_requires=get_dependencies(),
 )

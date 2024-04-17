@@ -2,7 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from simple_history.models import HistoricalRecords
 
-from apps.tasks.choices import TaskState
+from taskboard_app.tasks.choices import TaskState
 
 
 class UpdatedTimestampModel(models.Model):

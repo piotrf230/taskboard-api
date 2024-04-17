@@ -2,7 +2,7 @@ from django.contrib.auth.models import User
 from rest_framework import viewsets
 from rest_framework.permissions import IsAuthenticated
 
-from apps.users.serializers import UserListSerializer, UserDetailSerializer
+from taskboard_app.users.serializers import UserListSerializer, UserDetailSerializer
 
 
 class UserViewSet(viewsets.ReadOnlyModelViewSet):
@@ -11,6 +11,6 @@ class UserViewSet(viewsets.ReadOnlyModelViewSet):
     permission_classes = (IsAuthenticated,)
 
     def get_serializer_class(self):
-        if self.action == "detail":
+        if self.action == "retrieve":
             return UserDetailSerializer
         return UserListSerializer

@@ -1,7 +1,7 @@
 from rest_framework import serializers
 
-from apps.tasks.models import Task
-from apps.users.serializers import UserListSerializer
+from taskboard_app.tasks.models import Task
+from taskboard_app.users.serializers import UserListSerializer
 
 
 class TaskSerializer(serializers.ModelSerializer):

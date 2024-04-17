@@ -1,11 +1,10 @@
 from django.contrib.auth.models import User
 from pytest import fixture
 
-from apps.tasks.choices import TaskState
-from apps.tasks.models import Task
+from taskboard_app.tasks.choices import TaskState
+from taskboard_app.tasks.models import Task
 
-TASKS_LIST = [
-]
+TASKS_LIST = []
 
 
 @fixture
@@ -45,20 +44,29 @@ def users_fixture():
 
 
 @fixture
+def client_logged(client, user_fixture):
+    client.force_login(user_fixture)
+    return client
+
+
+@fixture
 def task_fixture(user_fixture):
     return Task.objects.bulk_create(
         (
             Task(
+                id=30001,
                 name="task1",
                 description="task description",
                 user=user_fixture,
             ),
             Task(
+                id=30002,
                 name="task2",
                 description="description",
                 user=user_fixture,
             ),
             Task(
+                id=30003,
                 name="task3",
                 user=user_fixture,
                 state=TaskState.IN_PROGRESS,
