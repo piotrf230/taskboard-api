@@ -4,8 +4,6 @@ Application requires Docker and docker-compose in order to run.
 In order to run the app in Docker, one should execute the following commands in project root directory:
 ```shell
 docker-compose up -d  --build
-docker-compose exec backend python manage.py collectstatic
-docker-compose exec backend python manage.py migrate
 ```
 The following command can be used to create administrator user:
 ```shell

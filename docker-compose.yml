@@ -15,18 +15,24 @@ services:
     build: .
     restart: always
     env_file: dev.env
-    command: gunicorn taskboard_app.wsgi:application --bind 0.0.0.0:5000
     volumes:
-     - .:/app
-     - static_volume:/app/static
+      - .:/app
+      - static_volume:/app/static
     depends_on:
-     - db
+      db:
+        condition: service_healthy
+        restart: true
   db:
     container_name: db
     image: postgres:16.2-alpine
     env_file: dev.env
     volumes:
       - postgres_data:/var/lib/postgresql/data/
+    healthcheck:
+      test: pg_isready
+      interval: 10s
+      timeout: 3s
+      retries: 3
 
 volumes:
   static_volume:
