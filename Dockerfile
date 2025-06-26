@@ -3,8 +3,8 @@ FROM python:3.11-alpine
 WORKDIR /app
 
 # set env variables
-ENV PYTHONDONTWRITEBYTECODE 1
-ENV PYTHONBUFFERED 1
+ENV PYTHONDONTWRITEBYTECODE=1
+ENV PYTHONBUFFERED=1
 
 # install dependencies
 RUN apk update \

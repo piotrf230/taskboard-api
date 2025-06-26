@@ -12,6 +12,13 @@ def schema_generation(namespace):
     schema_url = f"api/{namespace}-schema/"
     return (
         path(
+            "api/",
+            include(
+                ("taskboard_app.{}.urls".format(namespace), namespace),
+                namespace=namespace,
+            ),
+        ),
+        path(
             schema_url,
             SpectacularAPIView.as_view(api_version=namespace),
             name=schema_name,
@@ -31,8 +38,7 @@ def schema_generation(namespace):
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("api/", include(("taskboard_app.users.urls", "users"), namespace="users")),
-    path("api/", include(("taskboard_app.tasks.urls", "tasks"), namespace="tasks")),
     *schema_generation("tasks"),
     *schema_generation("users"),
+    *schema_generation("token"),
 ]

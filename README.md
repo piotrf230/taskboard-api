@@ -39,5 +39,8 @@ The application uses `drf-spectacular` for automatic documentation generation, w
 - `localhost/api/schema-users/`
 - `localhost/api/schema-users/swagger-ui/`
 - `localhost/api/schema-users/redoc/`
+- `localhost/api/schema-token/`
+- `localhost/api/schema-token/swagger-ui/`
+- `localhost/api/schema-token/redoc/`
 
 Or, if running locally, at localhost:8000 analogically.

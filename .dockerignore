@@ -1,0 +1,12 @@
+taskboard_app/tests/*
+.venv
+*.egg*
+
+__pycache__
+static
+README.md
+LICENSE
+pytest.ini
+docker-compose.yml
+.gitignore
+*.env
