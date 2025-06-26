@@ -4,12 +4,12 @@ Application requires Docker and docker-compose in order to run.
 In order to run the app in Docker, one should execute the following commands in project root directory:
 ```shell
 docker-compose up -d  --build
-docker-compose exec web python manage.py collectstatic
-docker-compose exec web python manage.py migrate
+docker-compose exec backend python manage.py collectstatic
+docker-compose exec backend python manage.py migrate
 ```
 The following command can be used to create administrator user:
 ```shell
-docker-compose exec web python manage.py createsuperuser
+docker-compose exec backend python manage.py createsuperuser
 ```
 ## Local installation
 In order to install the application locally for testing and development, one should follow these steps.
