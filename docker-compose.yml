@@ -14,7 +14,11 @@ services:
     container_name: backend
     build: .
     restart: always
-    env_file: dev.env
+    env_file:
+      - backend.env
+      - db.env
+    ports:
+      - 5000:5000
     volumes:
       - .:/app
       - static_volume:/app/static
@@ -25,7 +29,7 @@ services:
   db:
     container_name: db
     image: postgres:16.2-alpine
-    env_file: dev.env
+    env_file: db.env
     volumes:
       - postgres_data:/var/lib/postgresql/data/
     healthcheck:
