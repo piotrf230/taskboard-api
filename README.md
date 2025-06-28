@@ -18,7 +18,7 @@ Python 3.11 and Docker are required, working on python virtual environment is hi
 2. Install the app in interactive mode  
 `pip install -e .`
 3. Run a database container  
-`docker run --name db -p 5432:5432 -e POSTGRES_USER=postgres -e POSTGRES_PASSWORD=postgres12345 -e POSTGRES_DB=taskboard postgres:16.2-alpine`
+`docker run --name db -d -p 5432:5432 -e POSTGRES_USER=postgres -e POSTGRES_PASSWORD=postgres12345 -e POSTGRES_DB=taskboard postgres:16.2-alpine`
 4. Collect static files  
 `./manage.py collectstatic`
 5. Apply migrations to database  

@@ -7,7 +7,7 @@ from drf_spectacular.views import (
 )
 
 
-def schema_generation(namespace):
+def generate_urls_schema(namespace):
     schema_name = f"{namespace}_schema"
     schema_url = f"api/{namespace}-schema/"
     return (
@@ -38,7 +38,6 @@ def schema_generation(namespace):
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    *schema_generation("tasks"),
-    *schema_generation("users"),
-    *schema_generation("token"),
+    *generate_urls_schema("tasks"),
+    *generate_urls_schema("users"),
 ]
