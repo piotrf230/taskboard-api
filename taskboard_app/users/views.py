@@ -17,6 +17,7 @@ class UserViewSet(ModelViewSet):
         return UserDetailSerializer
 
     def get_permissions(self):
+        print("Action: " + self.action)
         if self.action == "register":
             self.permission_classes = (AllowAny,)
         elif self.action == "token":
