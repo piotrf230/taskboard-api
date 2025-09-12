@@ -2,6 +2,7 @@ from unittest.mock import ANY
 
 import pytest
 from django.urls import reverse
+from pytest_unordered import unordered
 from rest_framework import status
 
 
@@ -19,26 +20,30 @@ def test_users_not_logged_in(client, users_fixture, view, kwargs):
 
 
 @pytest.mark.django_db
-def test_users_list(client, users_fixture):
-    client.force_login(user=users_fixture[0])
-    response = client.get(reverse("users:users-list"))
+def test_users_list(client_logged_admin, users_fixture):
+    response = client_logged_admin.get(reverse("users:users-list"))
     assert response.status_code == status.HTTP_200_OK
     assert response.data == {
-        "count": 3,
+        "count": 4,
         "next": None,
         "previous": None,
-        "results": [
+        "results": ANY,
+    }
+    assert [dict(item) for item in response.data["results"]] == unordered(
+        [
+            {"id": ANY, "username": "admin"},
             {"id": ANY, "username": "jo"},
             {"id": ANY, "username": "js"},
             {"id": ANY, "username": "john.smith"},
-        ],
-    }
+        ]
+    )
 
 
 @pytest.mark.django_db
-def test_users_detail(client, user_fixture):
-    client.force_login(user=user_fixture)
-    response = client.get(reverse("users:users-detail", kwargs={"pk": user_fixture.id}))
+def test_users_detail(client_logged_admin, user_fixture):
+    response = client_logged_admin.get(
+        reverse("users:users-detail", kwargs={"pk": user_fixture.id})
+    )
     assert response.status_code == status.HTTP_200_OK
     assert response.data == {
         "id": ANY,

@@ -8,12 +8,24 @@ TASKS_LIST = []
 
 
 @fixture
+def admin_fixture():
+    return User.objects.create_superuser(
+        first_name="Admin",
+        last_name="Admin",
+        username="admin",
+        email="admin@email.com",
+        password="admin",
+    )
+
+
+@fixture
 def user_fixture():
-    return User.objects.create(
+    return User.objects.create_user(
         first_name="John",
         last_name="Smith",
         username="john.smith",
         email="test.user@email.com",
+        password="jsrulez",
     )
 
 
@@ -46,6 +58,12 @@ def users_fixture():
 @fixture
 def client_logged(client, user_fixture):
     client.force_login(user_fixture)
+    return client
+
+
+@fixture
+def client_logged_admin(client, admin_fixture):
+    client.force_login(admin_fixture)
     return client
 
 

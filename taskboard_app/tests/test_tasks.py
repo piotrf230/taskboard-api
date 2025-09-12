@@ -4,6 +4,7 @@ from unittest.mock import ANY
 import freezegun
 import pytest
 from django.urls import reverse
+from pytest_unordered import unordered
 from rest_framework import status
 
 from taskboard_app.tasks.choices import TaskState
@@ -37,9 +38,14 @@ def test_tasks_list(client_logged, task_fixture):
         "count": 3,
         "next": None,
         "previous": None,
-        "results": [
+        "results": ANY,
+    }
+    assert [dict(item) for item in response.data["results"]] == unordered(
+        [
             {
                 "id": ANY,
+                "created": ANY,
+                "updated":ANY,
                 "name": "task1",
                 "description": "task description",
                 "user": {"id": ANY, "username": "john.smith"},
@@ -47,20 +53,24 @@ def test_tasks_list(client_logged, task_fixture):
             },
             {
                 "id": ANY,
+                "created": ANY,
+                "updated":ANY,
                 "name": "task2",
-                "description": " description",
+                "description": "description",
                 "user": {"id": ANY, "username": "john.smith"},
                 "state": TaskState.NEW,
             },
             {
                 "id": ANY,
+                "created": ANY,
+                "updated":ANY,
                 "name": "task3",
                 "description": "",
                 "user": {"id": ANY, "username": "john.smith"},
                 "state": TaskState.IN_PROGRESS,
             },
-        ],
-    }
+        ]
+    )
 
 
 @pytest.mark.django_db
