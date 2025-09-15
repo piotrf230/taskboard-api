@@ -45,7 +45,7 @@ def test_tasks_list(client_logged, task_fixture):
             {
                 "id": ANY,
                 "created": ANY,
-                "updated":ANY,
+                "updated": ANY,
                 "name": "task1",
                 "description": "task description",
                 "user": {"id": ANY, "username": "john.smith"},
@@ -54,7 +54,7 @@ def test_tasks_list(client_logged, task_fixture):
             {
                 "id": ANY,
                 "created": ANY,
-                "updated":ANY,
+                "updated": ANY,
                 "name": "task2",
                 "description": "description",
                 "user": {"id": ANY, "username": "john.smith"},
@@ -63,7 +63,7 @@ def test_tasks_list(client_logged, task_fixture):
             {
                 "id": ANY,
                 "created": ANY,
-                "updated":ANY,
+                "updated": ANY,
                 "name": "task3",
                 "description": "",
                 "user": {"id": ANY, "username": "john.smith"},

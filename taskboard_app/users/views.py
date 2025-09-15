@@ -17,7 +17,6 @@ class UserViewSet(ModelViewSet):
         return UserDetailSerializer
 
     def get_permissions(self):
-        print("Action: " + self.action)
         if self.action == "register":
             self.permission_classes = (AllowAny,)
         elif self.action == "token":
@@ -33,9 +32,16 @@ class UserViewSet(ModelViewSet):
         methods=["POST"],
     )
     def register(self, request):
-        User.objects.create_user(**request.data)
-        User.save()
-        return Response()
+        print("register")
+        user = User.objects.create_user(**request.data)
+        print(user)
+        #User.save()
+        print("saved")
+        serializer = UserDetailSerializer(user)
+        print("serializer")
+        resp = Response(serializer.data, 201)
+        print(resp)
+        return resp
 
     @action(
         url_name="token",
@@ -45,4 +51,4 @@ class UserViewSet(ModelViewSet):
     )
     def token(self, request):
         serializer = UserDetailSerializer(request.user)
-        return Response(serializer.data | {"is_admin": request.user.is_staff})
+        return Response(serializer.data | {"is_admin": request.user.is_superuser})
