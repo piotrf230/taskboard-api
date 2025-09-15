@@ -32,15 +32,9 @@ class UserViewSet(ModelViewSet):
         methods=["POST"],
     )
     def register(self, request):
-        print("register")
         user = User.objects.create_user(**request.data)
-        print(user)
-        #User.save()
-        print("saved")
         serializer = UserDetailSerializer(user)
-        print("serializer")
         resp = Response(serializer.data, 201)
-        print(resp)
         return resp
 
     @action(
