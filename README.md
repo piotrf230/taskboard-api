@@ -31,14 +31,11 @@ Python 3.11 and Docker are required, working on python virtual environment is hi
 ## Documentation
 The application uses `drf-spectacular` for automatic documentation generation, which can be accessed after running the app at:
 
-- `localhost/api/schema-tasks/`
-- `localhost/api/schema-tasks/swagger-ui/`
-- `localhost/api/schema-tasks/redoc/`
-- `localhost/api/schema-users/`
-- `localhost/api/schema-users/swagger-ui/`
-- `localhost/api/schema-users/redoc/`
-- `localhost/api/schema-token/`
-- `localhost/api/schema-token/swagger-ui/`
-- `localhost/api/schema-token/redoc/`
+- `localhost/api/tasks-schema/`
+- `localhost/api/tasks-schema/swagger-ui/`
+- `localhost/api/tasks-schema/redoc/`
+- `localhost/api/users-schema/`
+- `localhost/api/users-schema/swagger-ui/`
+- `localhost/api/users-schema/redoc/`
 
 Or, if running locally, at localhost:8000 analogically.
