@@ -1,4 +1,5 @@
 # Task management application backend
+This app can also be deployed alongside [taskboard-web](https://github.com/piotrf230/taskboard-web), which acts as a front end. To do this, follow instructions on [taskboard-web](https://github.com/piotrf230/taskboard-web).
 ## Docker deployment using docker-compose
 Application requires Docker and docker-compose in order to run.
 In order to run the app in Docker, one should execute the following commands in project root directory:
